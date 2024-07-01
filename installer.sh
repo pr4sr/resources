@@ -51,7 +51,7 @@ if [[ $response =~ ^[Yy]$ ]]; then
     curl "http://setup.rbxcdn.com/mac/$version-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
     rm ./jq
 
-  animate_dots -n "Installing Latest Version of Roblox (don't close, will take time.)"
+  animate_dots echo -n "Installing Latest Version of Roblox (don't close, will take time.)"
     [ -d "/Applications/Roblox.app" ] && rm -rf "/Applications/Roblox.app"
     unzip -o -q "./RobloxPlayer.zip"
     mv ./RobloxPlayer.app /Applications/Roblox.app
