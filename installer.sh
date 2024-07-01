@@ -1,19 +1,20 @@
 #!/bin/bash
 
-if [ -f "installer.sh" ]; then
-  echo "[Warning]: A script named 'installer.sh' already exists."
-  echo "Do you want to delete it and continue? (y/N)"
-  read -r -p "" response
+#code below is just pre-cautionary
+#if [ -f "installer.sh" ]; then
+#  echo "[Warning]: A script named 'installer.sh' already exists."
+#  echo "Do you want to delete it and continue? (y/N)"
+#  read -r -p "" response
 
   # User confirmation and deletion (optional)
-  if [[ $response =~ ^[Yy]$ ]]; then
-    echo "Deleting 'installer.sh'..."
-    rm -f "installer.sh"
-    echo "Deleted."
-  else
-    echo "Exiting..."
-  fi
-fi
+ # if [[ $response =~ ^[Yy]$ ]]; then
+  #  echo "Deleting 'installer.sh'..."
+   # rm -f "installer.sh"
+    # echo "Deleted."
+  #else
+   # echo "Exiting..."
+  #fi
+#fi
 
 # loading animation with dots
 function animate_dots() {
