@@ -34,7 +34,6 @@ animate_dots "Grabbing resources..."
 
 # download and installation instructions (simulated)
 animate_dots "Downloading Macware.."
-animate_dots "Installing latest Roblox application"
 
 # prompt user for confirmation
 echo -e "\n[Macware]: This script will uninstall/reinstall your roblox."
