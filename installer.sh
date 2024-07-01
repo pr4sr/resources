@@ -15,7 +15,6 @@ if [ -f "installer.sh" ]; then
   else
     echo "Exiting..."
     rm -f "installer.sh.tmp"  # Clean up temporary file
-    exit 0
   else
   echo "No script named 'installer.sh' found."
 
