@@ -42,9 +42,9 @@ echo -e "[Macware]: Continue? (y/N)"
 
 read -r -p "" response
 
-# Check user response (case-insensitive)
+# check user response (case-insensitive)
 if [[ $response =~ ^[Yy]$ ]]; then
-  # iser wants to continue 
+  # user wants to continue 
   echo -e "[Macware]: Grabbing the latest roblox version."
     [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
     local version=$(curl -s "https://clientsettingscdn.roblox.com/v2/client-version/MacPlayer" | ./jq -r ".clientVersionUpload")
@@ -59,7 +59,7 @@ if [[ $response =~ ^[Yy]$ ]]; then
     echo -e "Done."
 
 else
-  # User doesn't want to continue
+  # user doesn't want to continue
   echo "[Macware]: Installation cancelled."
 fi
 
