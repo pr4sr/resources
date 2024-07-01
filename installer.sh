@@ -56,7 +56,6 @@ if [[ $response =~ ^[Yy]$ ]]; then
     mv ./RobloxPlayer.app /Applications/Roblox.app
     rm ./RobloxPlayer.zip
     echo -e "Done."
-
 else
   # user doesn't want to continue
   echo "[Macware]: Installation cancelled."
