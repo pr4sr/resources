@@ -1,26 +1,46 @@
 #!/bin/bash
 
-# Function to simulate a loading animation with dots
+#!/bin/bash
+
+if [ -f "installer.sh" ]; then
+  echo "[Warning]: A script named 'installer.sh' already exists."
+  echo "Do you want to delete it and continue? (y/N)"
+  read -r -p "" response
+
+  # User confirmation and deletion (optional)
+  if [[ $response =~ ^[Yy]$ ]]; then
+    echo "Deleting 'installer.sh'..."
+    rm -f "installer.sh"
+    echo "Deleted."
+  else
+    echo "Exiting..."
+    rm -f "installer.sh.tmp"  # Clean up temporary file
+    exit 0
+else
+  echo "No script named 'installer.sh' found."
+
+
+# loading animation with dots
 function animate_dots() {
   local count=0
   local char="."
   while [[ $count -lt 5 ]]; do
-    echo -en "\r[Macware]: $1$char"  # Move cursor to beginning of line (-en)
+    echo -en "\r[Macware]: $1$char"  # moves cursor to beginning of line (-en)
     sleep 3
     char="$char."
     ((count++))
   done
-  echo  # Print a newline after the animation
+  echo  # prints a newline after the animation
 }
 
-# Simulate checking online status
+# simulate checking online status
 animate_dots "Grabbing resources..."
 
-# Download and installation instructions (simulated)
+# download and installation instructions (simulated)
 animate_dots "Downloading Macware.."
 animate_dots "Installing latest Roblox application"
 
-# Prompt user for confirmation
+# prompt user for confirmation
 echo -e "\n[Macware]: This script will uninstall/reinstall your roblox."
 echo -e "[Macware]: Continue? (y/N)"
 
@@ -28,7 +48,7 @@ read -r -p "" response
 
 # Check user response (case-insensitive)
 if [[ $response =~ ^[Yy]$ ]]; then
-  # User wants to continue 
+  # iser wants to continue 
   echo -e "[Macware]: Grabbing the latest roblox version."
     [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
     local version=$(curl -s "https://clientsettingscdn.roblox.com/v2/client-version/MacPlayer" | ./jq -r ".clientVersionUpload")
