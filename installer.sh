@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 if [ -f "installer.sh" ]; then
   echo "[Warning]: A script named 'installer.sh' already exists."
   echo "Do you want to delete it and continue? (y/N)"
@@ -14,10 +12,8 @@ if [ -f "installer.sh" ]; then
     echo "Deleted."
   else
     echo "Exiting..."
-    rm -f "installer.sh.tmp"  # Clean up temporary file
-  else
-  echo "No script named 'installer.sh' found."
-
+  fi
+fi
 
 # loading animation with dots
 function animate_dots() {
