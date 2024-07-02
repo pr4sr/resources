@@ -2,13 +2,6 @@
 
 clear
 # Define the text with proper spacing
-text="       _ __ ___ __ _ _____  ____ _ _ __ ___  ____
-            | *_ * _ \ / _* |/ __\ \ /\ / / _* I '/ __ \
-            | | | | | | (_| | (__ \ V V / (_| | | |  __/
-            |_| |_| |_|\__,_|\___| \_/\_/ \__,_|_| \___|
-
-"  
-
 # Print the text to the console
 echo "$text"
 echo " "
