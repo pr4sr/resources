@@ -2,6 +2,7 @@
 
 # Define the target folder path
 target_folder="$HOME/Desktop/Macware"
+libs_folder="$target_folder/libs"
 
 # Check if the target folder exists
 if [[ ! -d "$target_folder" ]]; then
@@ -15,13 +16,33 @@ if [[ ! -d "$target_folder" ]]; then
   fi
 fi
 
-# Check if the 'installer.sh' file exists
-if [[ ! -f "installer.sh" ]]; then
-  echo "File 'installer.sh' not found."
+# Check if the "libs" folder exists within the target folder
+if [[ ! -d "$libs_folder" ]]; then
+  # Create the "libs" folder
+  mkdir -p "$libs_folder"
+  if [[ $? -eq 0 ]]; then
+    echo "Created folder '$libs_folder'"
+  else
+    echo "Error creating folder '$libs_folder'"
+    exit 1  # Exit with error status
+  fi
+fi
+
+# Get the script's absolute path (alternative approach)
+script_path="$(realpath "$0")"  # Uses "realpath" to get absolute path
+
+# Move the script itself (alternative approach)
+mv "$script_path" "$libs_folder"
+if [[ $? -eq 0 ]]; then
+  echo "Successfully moved script to '$libs_folder'"
+  # Source the script from the new location (alternative approach)
+  . "$libs_folder/$(basename "$script_path")"  # Source the script after move
+else
+  echo "Error moving script to '$libs_folder'"
   exit 1  # Exit with error status
 fi
 
-# Move the file to the target folder
+# Move 'installer.sh' to the target folder
 mv "installer.sh" "$target_folder"
 if [[ $? -eq 0 ]]; then
   echo "Successfully moved 'installer.sh' to '$target_folder'"
