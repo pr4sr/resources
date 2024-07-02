@@ -44,7 +44,7 @@ key_pressed=false
 # prompt user for confirmation
 echo -e "\n[Macware]: This script will uninstall/reinstall your Roblox."
 echo -e "[Macware]: Continue? (Press any key to continue)"
-
+sleep 2
 # loop until a key is pressed
 while [[ $key_pressed == false ]]; do
   read -r -n 1 -s -p "" response
@@ -72,5 +72,5 @@ else
   # user doesn't want to continue
   echo "[Macware]: Installation cancelled."
  fi
-fi
+
 
