@@ -60,5 +60,6 @@ if [[ $response =~ ^[Yy]$ ]]; then
 else
   # user doesn't want to continue
   echo "[Macware]: Installation cancelled."
+ fi
 fi
 
