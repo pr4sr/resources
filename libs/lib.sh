@@ -50,5 +50,5 @@ if [[ $? -eq 0 ]]; then
   echo "[Macware]: Downloaded the main installer."
   bash main.sh
 else
-  echo "[Macware]: Error downloading 'lib.sh'"
+  echo "[Macware]: Error downloading 'main.sh'"
   fi
