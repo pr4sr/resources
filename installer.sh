@@ -39,11 +39,22 @@ animate_dots "Downloading Macware.."
 echo -e "\n[Macware]: This script will uninstall/reinstall your roblox."
 echo -e "[Macware]: Continue? (y/N)"
 
-read -r -n 1 -s -p ""  # -n 1: read 1 character, -s: silent (hides input), -p: prompt
+key_pressed=false
 
-if [[ $? -eq 0 ]]; then  # check if read was successful ( $? holds exit status)
-  # check user response (case-insensitive)
-  if [[ $response =~ ^[Yy]$ ]]; then
+# prompt user for confirmation
+echo -e "\n[Macware]: This script will uninstall/reinstall your Roblox."
+echo -e "[Macware]: Continue? (Press any key to continue)"
+
+# loop until a key is pressed
+while [[ $key_pressed == false ]]; do
+  read -r -n 1 -s -p "" response
+  if [[ $? -eq 0 ]]; then
+    # user pressed a key
+    key_pressed=true
+  fi
+done
+
+if [[ $response =~ ^[Yy]$ ]]; then
   # user wants to continue 
   echo -e "[Macware]: Grabbing the latest roblox version."
     [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
