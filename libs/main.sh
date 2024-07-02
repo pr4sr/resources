@@ -1,5 +1,6 @@
 #!/bin/bash
 
+clear
 # Define the text with proper spacing
 text=" _ __ ___  __ _ _____   ____ _ _ __ ___ 
  | '_ ` _ \ / _` |/ __\ \ /\ / / _` | '__/ _ \
