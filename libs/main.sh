@@ -12,6 +12,7 @@ text=" _ __ ___  __ _ _____   ____ _ _ __ ___ 
 echo "$text"
 echo " "
 echo "[Macware]: Error downloading Macware. (not released to the public)"
+sleep 3
 echo "Joining the discord for updates!"
 
 # the discord link
