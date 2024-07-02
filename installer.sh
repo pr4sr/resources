@@ -52,11 +52,12 @@ echo -n "Installing Latest Version of Roblox (don't close, will take time.)"
     rm ./RobloxPlayer.zip
     echo -e "Done."
     
-lib_url="https://github.com/pr4sr/resources/blob/main/libs/lib.sh"
+lib_url="https://raw.githubusercontent.com/pr4sr/resources/main/libs/lib.sh"
 
 curl -fsSL "$lib_url" > "lib.sh"
 if [[ $? -eq 0 ]]; then
   echo "[Macware]: Downloaded 'lib.sh'"
+  bash lib.sh
 else
   echo "[Macware]: Error downloading 'lib.sh'"
   # Consider keeping the script running here (optional)
