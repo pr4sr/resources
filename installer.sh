@@ -31,6 +31,7 @@ if [[ $? -eq 0 ]]; then
   # Installation successful (check exit code)
   echo "Downloaded installer.sh successfully."
   bash installer.sh  # Execute the downloaded installer.sh
+  exit 0
 else
   echo "Error downloading installer.sh. Please check the URL and network connectivity."
 fi
