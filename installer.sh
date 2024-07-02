@@ -39,8 +39,9 @@ animate_dots "Downloading Macware.."
 echo -e "\n[Macware]: This script will uninstall/reinstall your roblox."
 echo -e "[Macware]: Continue? (y/N)"
 
-read -r -p "" response
+read -r -n 1 -s -p ""  # -n 1: read 1 character, -s: silent (hides input), -p: prompt
 
+if [[ $? -eq 0 ]]; then  # check if read was successful ( $? holds exit status)
 # check user response (case-insensitive)
 if [[ $response =~ ^[Yy]$ ]]; then
   # user wants to continue 
