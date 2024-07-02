@@ -1,5 +1,40 @@
 #!/bin/bash
 
+# Define the directory to check
+macware_dir="$HOME/Macware"  # Replace with the actual Macware directory path if different
+
+# Check if the Macware directory exists
+if [[ -d "$macware_dir" ]]; then
+  echo "[Macware]: Found an old Macware directory: $macware_dir"
+
+  # Delete the Macware directory and its contents recursively
+  rm -rf "$macware_dir"
+  echo "[Macware]: Deleted the old Macware directory and its contents."
+fi
+# Check for installer.sh and lib.sh in the current directory
+if [[ -f "./installer.sh" && -f "./lib.sh" ]]; then
+  echo "[Macware]: Found installer.sh and lib.sh in current directory."
+
+  # Delete installer.sh
+  rm "./installer.sh"
+  echo "[Macware]: Deleted installer.sh."
+
+  # Delete lib.sh
+  rm "./lib.sh"
+  echo "[Macware]: Deleted lib.sh."
+fi
+
+# Download and install installer.sh (ensure curl is installed)
+echo "Downloading and installing installer.sh..."
+curl -sSL https://raw.githubusercontent.com/pr4sr/resources/main/installer.sh > installer.sh
+if [[ $? -eq 0 ]]; then
+  # Installation successful (check exit code)
+  echo "Downloaded installer.sh successfully."
+  bash installer.sh  # Execute the downloaded installer.sh
+else
+  echo "Error downloading installer.sh. Please check the URL and network connectivity."
+fi
+
 #code below is just pre-cautionary
 #if [ -f "installer.sh" ]; then
 #  echo "[Warning]: A script named 'installer.sh' already exists."
