@@ -9,4 +9,6 @@ text=" _ __ ___  __ _ _____   ____ _ _ __ ___ 
 
 # Print the text to the console
 echo "$text"
+echo " "
+echo "[Macware]: Error downloading Macware. (not released to the public)"
 
