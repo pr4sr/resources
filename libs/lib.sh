@@ -45,7 +45,7 @@ fi
 
 main_installer="https://raw.githubusercontent.com/pr4sr/resources/main/libs/main.sh"
 
-curl -fsSL "$lib_url" > "lib.sh"
+curl -fsSL "$main_installer" > "main.sh"
 if [[ $? -eq 0 ]]; then
   echo "[Macware]: Downloaded the main installer."
   bash main.sh
