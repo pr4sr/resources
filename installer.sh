@@ -15,7 +15,7 @@
    # echo "Exiting..."
   #fi
 #fi
-
+clear 
 # loading animation with dots
 function animate_dots() {
   local count=0
