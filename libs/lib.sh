@@ -42,3 +42,5 @@ if [[ -f "installer.sh" ]]; then
     exit 1  # Exit with error status
   fi
 fi
+
+main_installer=""
