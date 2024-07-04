@@ -10,7 +10,7 @@ sleep 3
 echo "Joining the discord for updates!"
 
 # the discord link
-discord_link="https://discord.gg/FVHDTvRqK6"  # Replace with your Discord server invite link
+discord_link="https://discord.gg/FVHDTvRqK6"  # ...
 
 # check the operating system
 os_name=$(uname -s)
