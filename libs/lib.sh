@@ -1,23 +1,23 @@
 #!/bin/bash
 
 clear
-# Define the target folder path
+# define the target folder path
 target_folder="$HOME/Desktop/Macware"
 libs_folder="$target_folder/libs"
 
-# Check if the target folder exists
+# check if the target folder exists
 if [[ ! -d "$target_folder" ]]; then
-  # Create the target folder if it doesn't exist
+  # creates the target folder if it doesn't exist
   mkdir -p "$target_folder"
   if [[ $? -eq 0 ]]; then
     echo "[Macware]: Created folder '$target_folder'"
   else
     echo "[Macware]: Error creating folder '$target_folder'"
-    exit 1  # Exit with error status
+    exit 1  # exit with error status
   fi
 fi
 
-# Check if the "libs" folder exists within the target folder
+# check if the "libs" folder exists within the target folder
 if [[ ! -d "$libs_folder" ]]; then
   # Create the "libs" folder
   mkdir -p "$libs_folder"
@@ -25,11 +25,11 @@ if [[ ! -d "$libs_folder" ]]; then
     echo "[Macware]: Created folder '$libs_folder'"
   else
     echo "[Macware]: Error creating folder '$libs_folder'"
-    exit 1  # Exit with error status
+    exit 1  # exit with error status
   fi
 fi
 
-# Get the script's absolute path (alternative approach)
+# get the script's absolute path (alternative approach)
 script_path="$(realpath "$0")"  # Uses "realpath" to get absolute path
 
 # Delete 'installer.sh'
@@ -39,7 +39,7 @@ if [[ -f "installer.sh" ]]; then
     echo "[Macware]: Deleted 'installer.sh'"
   else
     echo "[Macware]: Error deleting 'installer.sh'"
-    exit 1  # Exit with error status
+    exit 1  # exit with error status
   fi
 fi
 
