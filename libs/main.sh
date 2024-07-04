@@ -1,8 +1,8 @@
 #!/bin/bash
 
 clear
-# Define the text with proper spacing
-# Print the text to the console
+# define the text with proper spacing
+# prints the text to the console
 echo "$text"
 echo " "
 echo "[Macware]: Error downloading Macware. (not released to the public)"
